@@ -1,17 +1,17 @@
 ## The inverse of a matrix is cached by a pair of functions
 
-## Creates a special matrix object that can cache its inverse
+## Creates a special matrix object that can cache its inverse for the input (that is an invertible square matrix)
 
 makeCacheMatrix <- function(x = matrix()) {
-        i <- NULL
+        l <- NULL
         set <- function (matrix) {
                 m <<- matrix
-                i <<- NULL
+                l <<- NULL
         }
         get <- function() m
         setInverse <- function(inverse) {
-                i <<- inverse
-        getInverse <- function() i
+                l <<- inverse
+        getInverse <- function() l
         list(set=set, get=get, setInverse=setInverse,getInverse=getInverse)
 }
         
